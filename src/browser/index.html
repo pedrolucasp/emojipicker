@@ -7,5 +7,45 @@
   <body>
     <h1>Howdy!</h1>
     Pick an emoji!
+    <input class="search js-search" type="search" placeholder="Type a keyword...">
+    <div class="emojis"></div>
+
+    <script type="text/javascript">
+      window.$ = window.jQuery = require("jquery");
+      var emojis = require("emojilib");
+      var twemoji = require("twemoji");
+      var searchInput = $(".js-search");
+      searchInput.focus();
+      searchInput.on("keyup", function() {
+        search($(this).val());
+      });
+
+      function replaceWithUnicode(key){
+        var emoji = emojis[key].char;
+        if(emoji !== null){
+          // new Emoji(emoji.char);
+          // Then when constructed will have a name
+          // A :char:
+          // Unicode char
+          // and the image to display, which will be the output of twemoji.parse()
+          // :+1: 
+          return twemoji.parse('' + emoji + '');
+        }
+      }
+
+      function search (query) {
+        result = (Object.keys(emojis).filter(function(name) {
+          return name.match(query);
+        }));
+
+        var list = [];
+
+        result.forEach(function(item){
+          list.push(replaceWithUnicode(item));
+        });
+
+        $(".emojis").html(list.join(" "));
+      }
+    </script>
   </body>
 </html>
