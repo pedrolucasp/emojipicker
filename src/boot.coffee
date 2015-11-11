@@ -12,9 +12,9 @@ app.on 'window-all-closed', ->
 
 # When Electron finish doing all the heavy work for us
 app.on 'ready', ->
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow width: 600, height: 300
   # load the index.html
-  mainWindow.loadUrl('file://' + __dirname + '/browser/index.html')
+  mainWindow.loadUrl 'file://' + __dirname + '/browser/index.html'
 
 # Dispose our Window
 app.on 'closed', ->
