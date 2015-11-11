@@ -19,8 +19,7 @@ mb = menubar(appOptions)
 # Report crashs
 require('crash-reporter').start()
 
-# Our template
-
+# Our template menu
 template = [
   {
     label: 'EmojiPicker',
