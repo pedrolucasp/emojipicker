@@ -1,14 +1,19 @@
 {
-  "name"          : "emojipicker",
-  "description"   : "An simple emojipicker for Linux",
-  "version"       : "0.0.1",
-  "main"          : "main.js",
-  "license"       : "MIT",
-  "dependencies"  : {
-    "coffee-script" : "1.8.0",
-    "jquery"        : "^2.1.1"
+  "name": "emojipicker",
+  "description": "An simple emojipicker for Linux",
+  "version": "0.0.1",
+  "main": "main.js",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.5.0",
+    "coffee-script": "1.8.0",
+    "emojilib": "1.0.0",
+    "jquery": "^2.1.1",
+    "twemoji": "^1.4.1"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.34.1"
+    "electron-prebuilt": "^0.34.1",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0"
   }
 }
