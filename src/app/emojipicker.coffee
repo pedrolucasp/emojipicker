@@ -12,7 +12,7 @@ module.exports = class EmojiPicker
     filtered = @list.filter (emoji) -> emoji.name.match query
     filtered.forEach (result) =>
       results.push result
-      
+
     results
 
   buildIndex: ->
