@@ -11,7 +11,7 @@ module.exports = class EmojiPicker
     results = []
     filtered = @list.filter (emoji) -> emoji.name.match query
     filtered.forEach (result) =>
-      results.push result
+      results.push result if result isnt null
 
     results
 

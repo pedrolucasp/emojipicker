@@ -27,5 +27,4 @@ $(".search").on("keyup", function() {
 $(document).on("click", '.emoji', {}, function(){
   clipboard.writeText($(this).attr("alt"));
   $("#notification").fadeIn().delay(700).fadeOut();
-
 });

@@ -44,16 +44,20 @@ mb.on 'ready', ->
   # Menu
   menu = Menu.buildFromTemplate template
   Menu.setApplicationMenu menu
+  mb.window.setAlwaysOnTop true
 
   # Shortcuts
   shortcut = globalShorcut.register 'ctrl+shift+space', ->
-    if mb.window.isVisible() then mb.hideWindow() else mb.showWindow()
+    if mb.window.isFocused() then mb.hideWindow() else mb.showWindow()
 
   quitShotcut = globalShorcut.register 'esc', ->
     mb.hideWindow() if mb.window.isVisible()
 
   console.log "Failed to Register Shortcut" unless shortcut
 
+
+mb.app.on 'blur', ->
+  mb.hideWindow()
 
 # Dispose our Window
 mb.app.on 'will-quit', ->
