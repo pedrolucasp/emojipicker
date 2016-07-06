@@ -12,3 +12,4 @@ debug.log
 /electron/
 docs/output
 docs/includes
+dist/
